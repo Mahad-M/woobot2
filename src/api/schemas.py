@@ -7,6 +7,7 @@ class ChatMessage(BaseModel):
 
     role: Literal["user", "assistant"] = Field(description="Role of the message")
     content: str = Field(description="Content of the message")
+    session_id: str = Field(description="Unique session ID of the message")
 
 
 class ChatRequest(BaseModel):
