@@ -1,7 +1,7 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException, Depends
 from .schemas import ChatRequest
 from ..llm.agent import agent
-
+from .utils import verify_origin
 
 # Create a router instance
 router = APIRouter(
@@ -17,7 +17,7 @@ async def root():
 
 
 @router.post("/chat")
-async def chat(request: ChatRequest):
+async def chat(request: ChatRequest, _=Depends(verify_origin)):
     """Chat endpoint."""
     request = request.model_dump()
     inputs = {"messages": request["messages"]}
