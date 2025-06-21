@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
-from .schemas import ChatMessage
-from ..llm.agent import agent
-from .utils import verify_origin
+from src.api.schemas import ChatMessage
+from src.llm.agent import agent
+from src.api.utils import verify_origin
 
 # Create a router instance
 router = APIRouter(

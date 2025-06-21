@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from .api.server import app
+from src.api.server import app
 import uvicorn
 import ngrok
 import os

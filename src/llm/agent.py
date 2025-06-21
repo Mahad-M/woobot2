@@ -2,7 +2,7 @@ from .tools import woocommerce_tools
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
-from .prompts import woobot_system_prompt
+from src.llm.prompts import woobot_system_prompt
 from langgraph.checkpoint.memory import InMemorySaver
 
 
